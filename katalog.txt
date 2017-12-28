@@ -1,1 +1,8 @@
-cat.jpg,index.js,katalog.txt,node_modules,package-lock.json,package.json,tekst.txt
+.git
+index.js
+cat.jpg
+katalog.txt
+node_modules
+package-lock.json
+package.json
+tekst.txt

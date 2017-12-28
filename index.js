@@ -10,7 +10,7 @@ fs.stat('./cat.jpg', function(err, stats) {
 fs.readFile('./tekst.txt', 'utf-8', function(err, data) {
     console.log('Dane przed zapisem!'.blue);
     console.log(data);
-    fs.appendFile('./tekst.txt', '\nA tak wyglądają po zapisie!', function(err) {
+    fs.appendFile('./tekst.txt', '\nPo zapisie!', function(err) {
         if (err) throw err;
         console.log('Zapisano!'.blue);
         fs.readFile('./tekst.txt', 'utf-8', function(err, data) {
@@ -25,7 +25,11 @@ fs.readdir('./',function(err, files) {
     }
     var katalog = files;
     console.log(katalog);
-	fs.writeFile('./katalog.txt',katalog,function(err,data){
-		console.log(data)
+    katalog.forEach(function(plik,index){plik = plik + '\n';console.log(plik);
+        fs.appendFile('./katalog.txt',plik,function(err,data){
+            fs.readFile('./katalog.txt', 'utf-8', function(err, data) {
+                console.log(plik);
+            });
+        });
 	});
 });
